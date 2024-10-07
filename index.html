@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./output.css">
+  <link href="https://fonts.googleapis.com/css?family=Karla:200,300,regular,500,600,700,800" rel="stylesheet" />
+  <script src="script.js" defer></script>
+</head>
+
+<body class="bg-[var(--Green-200-lighter)] min-h-screen font-['Karla',sans-serif]">
+  <main class="p-4 phoneScreen:p-8">
+    <section class="container max-w-full phoneScreen:max-w-2xl bg-white m-auto mt-20 p-10 rounded-xl">
+      <h1 class="text-[var(--Grey-900-darker)] text-2xl phoneScreen:text-3xl sm:text-4xl font-bold mb-8">Contact Us</h1>
+
+      <!-- form section -->
+      <form action="./">
+
+        <div class="input-group mb-4 name-section flex flex-col sm:flex-row items-center gap-4">
+          <div class="flex flex-col w-full sm:w-1/2">
+            <label for="fname" class="text-xs phoneScreen:text-lg text-[--Grey-900-darker] mb-1 phoneScreen:mb-3">First Name &nbsp;<b
+                class="text-[--Green-600-medium] text-lg">*</b></label>
+            <input type="text" name="fname" id="fname"
+              class="border-[1.8px] border-[var(--Grey-500-medium)] py-1 phoneScreen:py-2 px-4 rounded-lg text-xs phoneScreen:text-xl outline-[var(--Green-600-medium)] hover:border-[var(--Green-600-medium)]">
+              <p class="text-[var(--Red)] text-xs phoneScreen:text-[16px] mt-2 invisible">This field is required</p>
+            </div>
+            <div class="flex flex-col w-full sm:w-1/2">
+              <label for="lname" class="text-xs phoneScreen:text-lg text-[--Grey-900-darker] mb-1 phoneScreen:mb-3">Last Name &nbsp;<b
+                class="text-[--Green-600-medium] text-lg">*</b></label>
+                <input type="text" name="lname" id="lname"
+                class="border-[1.5px] border-[var(--Grey-500-medium)] py-1 phoneScreen:py-2 px-4 rounded-lg text-xs phoneScreen:text-xl outline-[var(--Green-600-medium)] hover:border-[var(--Green-600-medium)]">
+                <p class="text-[var(--Red)] text-xs phoneScreen:text-[16px] mt-2 invisible">This field is required</p>
+          </div>
+        </div>
+
+
+        <div class="input-group mb-4 flex flex-col sm:max-w-68 w-full">
+          <label for="email" class="text-xs phoneScreen:text-lg text-[--Grey-900-darker] mb-1 phoneScreen:mb-3">Email Address &nbsp;<b class="text-[--Green-600-medium] text-lg">*</b></label>
+          <input type="email" name="email" id="email"
+            class="border-[1px] border-[var(--Grey-500-medium)] py-1 phoneScreen:py-2 px-4 rounded-lg text-xs phoneScreen:text-xl outline-[var(--Green-600-medium)] hover:border-[var(--Green-600-medium)]">
+            <p class="text-[var(--Red)] text-xs phoneScreen:text-[16px] mt-2 invisible">Please enter a valid email address</p>
+        </div>
+
+
+        <label class="text-xs phoneScreen:text-lg text-[--Grey-900-darker] mb-1 phoneScreen:mb-3 flex">Query Type &nbsp;<b class="text-[--Green-600-medium] text-lg">*</b></label>
+        <div class="input-group mb-2 name-section flex flex-col sm:flex-row items-start gap-4">
+          <div class="flex flex-col w-full sm:w-1/2">
+            <div
+              class="border-[1px] border-[var(--Grey-500-medium)] py-1 phoneScreen:py-2 px-4 rounded-lg text-xs phoneScreen:text-xl flex gap-5 items-center cursor-pointer"
+              tabindex="0">
+              <input type="radio" name="gen" id="enquiry" value="General Enquiry" class="hidden radio">
+              <div class="w-5 h-5 rounded-[50%] overflow-hidden border-2 border-[var(--Grey-500-medium)]">
+                <img src="./assets/images/icon-radio-selected.svg" class="hidden w-full">
+              </div>
+              <p class="text-[var(--Grey-900-darker)]">General Enquiry</p>
+            </div>
+          </div>
+          <div class="flex flex-col w-full sm:w-1/2">
+            <div
+              class="border-[1px] border-[var(--Grey-500-medium)] py-1 phoneScreen:py-2 px-4 rounded-lg text-xs phoneScreen:text-xl outline-[var(--Green-600-medium)] flex gap-5 items-center cursor-pointer"
+              tabindex="0">
+              <input type="radio" name="gen" id="request" value="Support Request" class="hidden radio">
+              <div class="w-5 h-5 rounded-[50%] overflow-hidden border-2 border-[var(--Grey-500-medium)]">
+                <img src="./assets/images/icon-radio-selected.svg" class="hidden w-full">
+              </div>
+              <p class="text-[var(--Grey-900-darker)]">Support Request</p>
+            </div>
+          </div>
+        </div>
+        <p id="radio-err" class="text-[var(--Red)] text-xs phoneScreen:text-[16px] mt-2 mb-3 invisible">Please select a query type</p>
+
+
+        <div class="input-group flex flex-col mb-4">
+          <label for="review" class="text-xs phoneScreen:text-lg">Message &nbsp;<b class="text-[--Green-600-medium] text-lg">*</b></label>
+          <textarea name="review" id="review" class="border-[1px] border-[var(--Grey-500-medium)] outline-[var(--Green-600-medium)] mt-3 w-full phoneScreen:h-32 h-24 rounded-lg resize-none px-4 py-2"></textarea>
+          <p id="msg-err" class="text-[var(--Red)] text-xs phoneScreen:text-[16px] mt-3 mb-5 hidden">This field is required</p>
+        </div>
+
+
+        <div class="input-group flex mb-[2px] items-center gap-5 cursor-pointer">
+          <div class="check-box flex-shrink-0 w-6 h-6 border-[1px] rounded-sm  border-[var(--Grey-500-medium)] overflow-hidden" tabindex="0">
+            <input type="checkbox" name="check" id="check" class="hidden">
+            <img src="./assets/images/icon-checkbox-check.svg" class="hidden w-full">
+          </div>
+          <p class="text-[var(--Grey-900-darker)] text-xs phoneScreen:text-[16px]">I consent to being contacted by the team &nbsp;<b class="text-[--Green-600-medium] text-lg">*</b></p>
+        </div>
+        <p id="checkbox-err" class="text-[var(--Red)] text-xs phoneScreen:text-[16px] phoneScreen:mb-5 mb-3 invisible">To submit this form,please consent to being contacted</p>
+        <button class="w-full bg-[var(--Green-600-medium)] text-[var(--Green-200-lighter)] border-none rounded-md text-xs phoneScreen:text-xl py-2 phoneScreen:py-3 hover:bg-[rgb(8,67,56)]">Submit</button>
+      </form>
+
+      <!-- success message on submitting form -->
+      <div class="completed fixed rounded-xl top-6 left-1/2 -translate-x-1/2 max-w-xl bg-[rgb(31,55,50)] p-5 text-[var(--White)] hidden">
+        <div class="flex gap-2 mb-2"><img src="./assets/images/icon-success-check.svg" alt="icon-success-check"><b class="text-lg">Message Sent!</b></div>
+        <p class="text-[15px] opacity-75">Thanks  for completing the form. we'll be in touch soon!</p>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
